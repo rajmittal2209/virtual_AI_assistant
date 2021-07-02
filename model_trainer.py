@@ -25,5 +25,6 @@ def getImagesWithId(path):
 
 faces,IDs=getImagesWithId(path)
 recognizer.train(faces,IDs)
+os.mkdir("C:\\Users\\Raj mittal\\Desktop\\virtual_AI_Assistant\\recognizer")
 recognizer.write("recognizer/trainer.yml")
 print("success")

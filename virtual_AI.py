@@ -204,7 +204,7 @@ def face_recognition():                                     # face recognition s
     vid = cv2.VideoCapture(0,cv2.CAP_DSHOW)
     casc = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
     recognizer = cv2.face.LBPHFaceRecognizer_create()
-    recognizer.read("C:\\Users\\Raj mittal\\Desktop\\python\\recognizer\\trainer.yml")
+    recognizer.read("C:\\Users\\Raj mittal\\Desktop\\virtual_AI_Assistant\\recognizer\\trainer.yml")
 
     names=[""]
     with open("names.txt","r") as f:
@@ -221,7 +221,7 @@ def face_recognition():                                     # face recognition s
         for x,y,w,h in faces:
             cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,255),2)
             id,accuracy = recognizer.predict(gray[y:y+h,x:x+w])
-            if(accuracy<100):
+            if(accuracy<85):
                 id = names[id]
                 vid.release()
                 cv2.destroyAllWindows()
@@ -330,8 +330,8 @@ def ExecuteTasks():                 # main function that perform all tasks
 
 if __name__ == "__main__":
 
-    ExecuteTasks()                                     #comment it to get face recogntion security
-    exit()                                             # comment it too
+    # ExecuteTasks()                                     #comment it to get face recogntion security
+    # exit()                                             # comment it too
 
 ######################################### IF YOU WANT FACE RECOGNITION SECURITY ###########################################
 
@@ -345,8 +345,8 @@ if __name__ == "__main__":
 
     # 2. to delete the face data just go to the names.txt file and remove that name from the list and decrease the number in id.txt by 1
 #################################### MAIN CODE UNCOMMENT IT TO RUN FACE RECOGNITION SECURITY SYSTEM#############################
-    # speak("hello , I am a virtual AI assistant created by raj mittal , please verify your face id")
-    # face_recognition()
+    speak("hello , I am a virtual AI assistant created by raj mittal , please verify your face id")
+    face_recognition()
 
    
     

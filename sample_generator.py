@@ -1,9 +1,11 @@
 import cv2
-
+import os
 vid = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 casc = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 sampleNum = 0
 pre=0
+path_of_faces = "C:\\Users\\Raj mittal\\Desktop\\virtual_AI_Assistant\\dataset"
+os.mkdir(path_of_faces)
 with open("id.txt","r") as f:
     pre=f.read()
 pre = int(pre)
